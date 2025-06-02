@@ -10,27 +10,28 @@ interface todoItem {
 
 function App() {
   const [todos, setTodos] = useState<todoItem[]>([])
-  const [newTodo, setNewTodo] = useState<string>("")
+  const [novoTodo, setNovoTodo] = useState<string>("")
+  const [estaCarregado, setEstaCarregado] = useState<boolean>(false)
 
-  const AdicionarTarefa = () => {
-    if(newTodo !== "") {
+  const AdicionarTarefa = (): void => {
+    if(novoTodo !== "") {
       const newId = crypto.randomUUID()
       const newTodoItem: todoItem = {
         id: newId,
-        texto: newTodo,
+        texto: novoTodo,
         completado: false
       }
       setTodos([...todos, newTodoItem])
-      setNewTodo("")
+      setNovoTodo("")
     }
   }
 
-  const removerTarefa = (id: string) => {
+  const removerTarefa = (id: string): void => {
     const tarefasAtualizadas = todos.filter((todo) => todo.id !== id)
     setTodos(tarefasAtualizadas)
   } 
 
-  const marcarCompleto = (id: string) => {
+  const marcarCompleto = (id: string): void => {
     const todosAtualizados = todos.map((todo) => {
       if(todo.id === id) {
         return { ...todo, completado: !todo.completado}
@@ -40,12 +41,16 @@ function App() {
     setTodos(todosAtualizados)
   }
 
+  const obterTarefasCompletas = (): todoItem[] => {
+      return todos.filter(todo => todo.completado)
+  }
+
   return (
     <div className='app'>
         <div className="container">
-          <h1>Lista de tarefas</h1>
+          <h1>Lista de tarefas - {obterTarefasCompletas().length} / {todos.length}</h1>
           <div className='input-container'>
-            <input type="text" value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
+            <input type="text" value={novoTodo} onChange={(e) => setNovoTodo(e.target.value)} />
             <button onClick={AdicionarTarefa}>Adicionar tarefa</button>
           </div>
           <ol>
