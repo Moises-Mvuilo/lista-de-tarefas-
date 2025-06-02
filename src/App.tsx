@@ -11,7 +11,7 @@ interface todoItem {
 function App() {
   const [todos, setTodos] = useState<todoItem[]>([])
   const [novoTodo, setNovoTodo] = useState<string>("")
-  const [estaCarregado, setEstaCarregado] = useState<boolean>(false)
+  const [estaCargitregado, setEstaCarregado] = useState<boolean>(false)
 
   const AdicionarTarefa = (): void => {
     if(novoTodo !== "") {
