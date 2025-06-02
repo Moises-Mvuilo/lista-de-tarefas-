@@ -1,53 +1,120 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.app.dark {
+    background: #333 !important;
+    color: #fff;
+}
+
+.container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    text-align: center;
+}
+
+.container.dark {
+    background: #333;
+    color: #fff;
+}
+
+h1 {
+    color: #333;
+}
+
+.container.dark h1 {
+    color: #fff;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[type="text"] {
+    padding: 10px;
+    width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    margin-right: 10px;
+}
+
+.container.dark input[type="text"] {
+    background: #555;
+    color: #fff;
+    border: 1px solid #444;
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid  rgba(255, 255, 255, 0.87); ;;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-  color: rgba(255, 255, 255, 0.87); 
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
 }
+
 button:hover {
-  border-color: #646cff;
+    background-color: #218838;
 }
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+
+.container.dark button {
+    background-color: #444;
+    color: #fff;
+}
+
+ol {
+    list-style-type: none;
+    padding: 0;
 }
 
 li {
-  color: rgba(255, 255, 255, 0.87); 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li:last-child {
+    border-bottom: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+li span {
+    flex-grow: 1;
+    margin-left: 10px;
 }
 
-.card {
-  padding: 2em;
+input[type="checkbox"] {
+    margin-right: 10px;
 }
 
-.read-the-docs {
-  color: #888;
+li button {
+    background-color: #dc3545;
+}
+
+li button:hover {
+    background-color: #c82333;
+}
+
+.container.dark li button {
+    background-color: #666;
 }

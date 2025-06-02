@@ -3,7 +3,7 @@
 # lista-de-tarefas-
 Fazer lista de tarefas que possibilitará o usuário a lançar os produtos utilizados diariamente
 
-## sliders of the images created of the technology HTML, CSS and JAVASCRIPT
+## sliders of the images created of the technology HTML, CSS and TYPESCRIPT
 
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
 ![CSS](https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white)
@@ -12,6 +12,7 @@ Fazer lista de tarefas que possibilitará o usuário a lançar os produtos utili
 <div>
 <img src="./oneList.png">
 <img src="./secondList.png">
+<img src="./thirdList.png">
 </div>
 
 
