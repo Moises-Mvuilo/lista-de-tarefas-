@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {useTheme} from './ThemeContext.tsx'
 import "./App.css";
 
 interface todoItem {
@@ -9,6 +10,8 @@ interface todoItem {
 
 function App() {
   const chaveTarefaMemoria = "tarefas"
+
+  const {theme, toggleTheme} = useTheme();
   const [todos, setTodos] = useState<todoItem[]>([]);
   const [novoTodo, setNovoTodo] = useState<string>("");
   const [estaCarregado, setEstaCarregado] = useState<boolean>(false);
@@ -59,8 +62,8 @@ function App() {
   }, [])
 
   return (
-    <div className="app">
-      <div className="container">
+    <div className={`app ${theme}`}>
+      <div className={`container ${theme}`}>
         <h1>
           Lista de tarefas - {obterTarefasCompletas().length} / {todos.length}
         </h1>
@@ -91,6 +94,8 @@ function App() {
             </li>
           ))}
         </ol>
+        <button onClick={toggleTheme}>
+          Alterar para o tema {theme === 'light' ? 'Escuro': 'Claro'} </button>
       </div>
     </div>
   );
